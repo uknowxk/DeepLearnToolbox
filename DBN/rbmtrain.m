@@ -7,9 +7,11 @@ function rbm = rbmtrain(rbm, x, opts)
     assert(rem(numbatches, 1) == 0, 'numbatches not integer');
 
     for i = 1 : opts.numepochs
+        %return a random permutation of 1:m
         kk = randperm(m);
         err = 0;
         for l = 1 : numbatches
+            %get one batch
             batch = x(kk((l - 1) * opts.batchsize + 1 : l * opts.batchsize), :);
             
             v1 = batch;
