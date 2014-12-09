@@ -3,8 +3,8 @@ function nn = nnsetup(architecture)
 % nn = nnsetup(architecture) returns an neural network structure with n=numel(architecture)
 % layers, architecture being a n x 1 vector of layer sizes e.g. [784 100 10]
 
-    nn.size   = architecture;
-    nn.n      = numel(nn.size);
+    nn.size   = architecture;%number of units in each layer
+    nn.n      = numel(nn.size);%number of layers
     
     nn.activation_function              = 'tanh_opt';   %  Activation functions of hidden layers: 'sigm' (sigmoid) or 'tanh_opt' (optimal tanh).
     nn.learningRate                     = 2;            %  learning rate Note: typically needs to be lower when using 'sigm' activation function and non-normalized inputs.
